@@ -2528,7 +2528,7 @@
         {
             "language": "typescript",
             "source": [
-                "//Given\r\ntype Fruit={\r\n    color:string,\r\n    shape:string\r\n}\r\n\r\nlet apple:Fruit = {color:\"red\", shape:\"sphere\"}\r\nlet eaten:Fruit = null\r\n\r\n//Answer\r\nfunction fruitState(fruit: object | null): string {\r\n    if (typeof fruit === 'object'){\r\n        return (fruit.color as string)\r\n    } else {\r\n        return \"You ate my fruit already\"\r\n    }\r\n}\r\n\r\n"
+                "//Given\r\ntype Fruit={\r\n    color:string,\r\n    shape:string\r\n}\r\n\r\nlet apple:Fruit = {color:\"red\", shape:\"sphere\"}\r\nlet eaten:Fruit | null = null\r\n\r\n//Answer\r\nfunction fruitState(fruit: Fruit | null): string {\r\n    if (fruit){\r\n        return fruit.color\r\n    } else {\r\n        return \"You ate my fruit already\"\r\n    }\r\n}\r\n\r\n"
             ],
             "outputs": [
                 {
